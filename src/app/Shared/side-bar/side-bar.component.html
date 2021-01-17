@@ -1,0 +1,40 @@
+
+<div class="navbar-default sidebar nicescroll" role="navigation">
+    <div class="sidebar-nav navbar-collapse ">
+        <ul class="nav" id="side-menu">
+            <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+                <div class="input-group custom-search-form">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><i class="ti-search"></i> </button>
+                    </span>
+                </div>
+            </li>
+            <li>
+                <a [routerLink]="[ '/Main/Dashboard' ]" >
+                    <i class="glyphicon glyphicon-fire fa-fw"></i> 
+                Dashboard</a>
+            </li>
+            <li>
+                <a [routerLink]="[ '/Main/Porfile' ]">
+                    <i class="ti-user fa-fw"></i>
+                Perfil</a>
+            </li>
+            <li>
+                <a [routerLink]="[ '/Main/Usuarios' ]">
+                    <i class="ti-layout fa-fw"></i>
+                Usuarios</a>
+            </li>
+            <li>
+                <a [routerLink]="[ '/Main/Lista' ]">
+                    <i class="ti-files fa-fw"></i>
+                    Lista de Usuarios</a>
+            </li>
+            <li>
+                <a [routerLink]="[ '/Login' ]">
+                    <i class="ti-power-off fa-fw"></i>
+                    Salir</a>
+            </li>
+        </ul>
+    </div>
+</div>
