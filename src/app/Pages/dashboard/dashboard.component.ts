@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UsuarioService } from 'src/app/Services/Usuario.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
 
-  constructor() { }
+  public AllUsers:number;
+  public ActiveUser: number;
 
-  ngOnInit(): void {
+  constructor( private _service: UsuarioService ) { 
+    this._service.GetUsuarios(0).subscribe((resp:any) =>{
+      this.AllUsers = resp['data'].length;
+    });
+
+    this._service.GetUsuarios(1).subscribe((resp:any) =>{
+      this.ActiveUser = resp['data'].length;
+    });
   }
 
 }

@@ -5,6 +5,7 @@ import { SharedModule } from '../Shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioService } from '../Services/Usuario.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { UsuarioListComponent } from './usuario-list/usuario-list.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
@@ -31,7 +32,8 @@ import { PorfileComponent } from './porfile/porfile.component';
     CommonModule,
     SharedModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     UsuarioService

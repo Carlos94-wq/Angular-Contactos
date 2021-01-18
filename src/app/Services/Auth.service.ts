@@ -19,6 +19,11 @@ export class AuthService {
         const token = sessionStorage.getItem('Token') || ''; //Extraer token del session storage
         return token.length > 0;
     }
+    
+    public LogOf(){
+        sessionStorage.removeItem('Token');
+        this._Router.navigate(['/Login']);
+    }
 
     public Auth(Model: UserCredentials){
        return this._http.post(this.BaseUrl + 'Auth', Model, {headers: this.header.set('Content-Type','application/json')})
