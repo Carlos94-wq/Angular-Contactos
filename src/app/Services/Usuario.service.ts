@@ -16,8 +16,9 @@ export class UsuarioService {
         this.headers = new HttpHeaders();
     }
 
-    public GetUsario(){
-        return this._http.get( this.BaseUrl + 'Usuario/' + this.decoded['nameid'], { 
+    public GetLogUser(id: number){
+
+        return this._http.get( this.BaseUrl + 'Usuario/' + id, { 
             headers: this.headers.set('Authorization', 'Bearer ' + this.Token )
         });
     }
@@ -36,8 +37,6 @@ export class UsuarioService {
     }
 
     public PutUsuario(Model: UsuarioDto){
-
-        Model.Id = parseInt(this.decoded['nameid']);
 
         return this._http.put(this.BaseUrl + 'Usuario', Model, { 
             headers: this.headers.set('Authorization', 'Bearer ' + this.Token )

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsuarioDto } from 'src/app/Models/UsuarioDto';
 import { UsuarioService } from 'src/app/Services/Usuario.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-usuarios',
@@ -46,7 +47,9 @@ export class UsuariosComponent {
         this.Model.IdRol = parseInt(this.form.controls['idRol'].value);
   
         this._Service.PostUsuario(this.Model).subscribe(resp =>{
-          console.log(resp)
+          if (resp['data']) {
+            Swal.fire('Datos registrados')
+          }
         })
       }
    }
