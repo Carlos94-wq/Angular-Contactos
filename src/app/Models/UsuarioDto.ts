@@ -4,6 +4,6 @@ export class UsuarioDto {
     public Apellidos: string;
     public Correo: string;
     public Contrasenia: string;
-    public IRol: number;
+    public IdRol: number;
     public IdEstatus: number;
 }

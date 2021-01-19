@@ -37,7 +37,7 @@ export class LoginComponent {
     if (this.form.valid) {
       this.ShowLoader = false;
       this._AuthService.Auth(this.Model).subscribe( resp =>{
-        if (resp === 'Not User found') {
+        if (resp['data'] === 'Not User found') {
           alert('No se encontraron Usuarios')
         }
       });

@@ -1,1 +1,87 @@
-<p>usuarios works!</p>
+
+<div class="container-fluid animate__animated animate__fadeIn">
+    <!-- row -->
+    <div class="row">
+        <div class="col-md-8 col-xs-12">
+            <div class="white-box">
+                <form [formGroup]="form" (ngSubmit)="AddUser()" class="form-horizontal form-material">
+                   <div class="form-row">
+                    <div class="form-group col-6">
+                        <label class="col-md-12">Nombre</label>
+                        <div class="col-md-12">
+                            <input 
+                                type="text" 
+                                placeholder="Johnathan Doe"
+                                name="nombre"
+                                formControlName="nombre"
+                                class="form-control form-control-line"
+                            > 
+                        </div>
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="col-md-12">Apellidos</label>
+                        <div class="col-md-12">
+                            <input 
+                                type="text" 
+                                placeholder="Johnathan Doe"
+                                class="form-control form-control-line"
+                                formControlName="apellidos"
+                            > 
+                        </div>
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="col-md-12">Correo</label>
+                        <div class="col-md-12">
+                            <input 
+                                type="text" 
+                                placeholder="Johnathan Doe"
+                                class="form-control form-control-line"
+                                formControlName="correo"
+                            > 
+                        </div>
+                    </div>
+                   </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Password</label>
+                        <div class="col-md-12">
+                            <input 
+                                type="password" 
+                                value="password"
+                                class="form-control form-control-line"
+                                formControlName="contrasenia"
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Confirm password</label>
+                        <div class="col-md-12">
+                            <input 
+                                type="password" 
+                                value="password"
+                                class="form-control form-control-line"
+                                formControlName="confirmar"
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Role</label>
+                        <div class="col-md-12">
+                         <select  class="form-control" formControlName="idRol">
+                            <option value="1">Select an option</option>
+                            <option value="2">Admin</option>
+                         </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button class="btn btn-success">Add User</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+
+

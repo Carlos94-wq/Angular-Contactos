@@ -43,4 +43,10 @@ export class UsuarioService {
             headers: this.headers.set('Authorization', 'Bearer ' + this.Token )
         });
     }
+
+    public PostUsuario(Model: UsuarioDto){
+        return this._http.post(this.BaseUrl + 'Usuario', Model, { 
+            headers: this.headers.set('Authorization', 'Bearer ' + this.Token ) 
+        })
+    }
 }
