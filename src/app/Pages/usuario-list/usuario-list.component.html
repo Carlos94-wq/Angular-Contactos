@@ -25,9 +25,11 @@
                                 <td *ngIf="item.idRol == 2">User</td>
                                 <th>
                                     <p *ngIf="item.id == IdUser">Current User</p>
-                                    <button *ngIf="item.id != IdUser" (click)="Delete(item.id, i )" class="btn btn-success">
-                                        Delete User
-                                    </button>
+                                    <div *ngIf="item.id != IdUser">
+                                        <button [disabled]="RoleUser != 1" (click)="Delete(item.id, i )" class="btn btn-success">
+                                            Delete User
+                                        </button>
+                                    </div>            
                                 </th>
                             </tr>
                         </tbody>

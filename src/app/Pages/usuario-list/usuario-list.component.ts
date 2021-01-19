@@ -11,7 +11,9 @@ import * as jwt_decode from 'jwt-decode';
 })
 export class UsuarioListComponent {
 
+  public RoleUser: number;
   public IdUser:number;
+
   public token = jwt_decode.default(sessionStorage.getItem('Token'));
 
   public ModelList: any[];
@@ -21,7 +23,9 @@ export class UsuarioListComponent {
       this.ModelList = resp['data'];
     });
 
+    console.log(this.token);
     this.IdUser = this.token['nameid'];
+    this.RoleUser = this.token['role'];
   }
 
   public Delete(id: number, index:number){

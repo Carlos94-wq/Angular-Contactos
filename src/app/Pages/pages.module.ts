@@ -12,6 +12,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PagesComponent } from './Main/pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PorfileComponent } from './porfile/porfile.component';
+import { ContactosComponent } from './contactos/contactos.component';
+import { ContactosListComponent } from './contactos-list/contactos-list.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,9 @@ import { PorfileComponent } from './porfile/porfile.component';
     UsuariosComponent,
     DashboardComponent,
     PagesComponent,
-    PorfileComponent
-  ],
-  exports:[
-    UsuarioListComponent,
-    UsuariosComponent,
-    DashboardComponent,
-    PagesComponent,
-    RouterModule
+    PorfileComponent,
+    ContactosComponent,
+    ContactosListComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +31,15 @@ import { PorfileComponent } from './porfile/porfile.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule
+  ],
+  exports:[
+    UsuarioListComponent,
+    UsuariosComponent,
+    DashboardComponent,
+    PagesComponent,
+    RouterModule,
+    ContactosComponent,
+    ContactosListComponent
   ],
   providers: [
     UsuarioService
