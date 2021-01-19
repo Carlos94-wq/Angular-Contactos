@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserCredentials } from 'src/app/Models/UserCredentials.model';
 import { AuthService } from 'src/app/Services/Auth.service';
@@ -29,17 +29,20 @@ export class LoginComponent {
 
   public Login(){
 
-    this.ShowLoader = true;
-
     this.Model.Correo = this.form.value.correo;
     this.Model.Contrasenia = this.form.value.contrasenia;
 
     if (this.form.valid) {
-      this.ShowLoader = false;
+      this.ShowLoader = true;
+
       this._AuthService.Auth(this.Model).subscribe( resp =>{
+        
+        this.ShowLoader = false;
+
         if (resp['data'] === 'Not User found') {
           alert('No se encontraron Usuarios')
         }
+
       });
     }
     else

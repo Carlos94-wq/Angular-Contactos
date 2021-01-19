@@ -48,4 +48,10 @@ export class UsuarioService {
             headers: this.headers.set('Authorization', 'Bearer ' + this.Token ) 
         })
     }
+
+    public DeleteUsuario(id: number){
+        return this._http.delete(this.BaseUrl + 'Usuario/' + id, {
+             headers: this.headers.set('Authorization', 'Bearer ' + this.Token) 
+        })
+    }
 }

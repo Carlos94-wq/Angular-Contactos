@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BreadcrumsComponent } from './breadcrums/breadcrums.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
@@ -14,12 +15,14 @@ import { BreadcrumsComponent } from './breadcrums/breadcrums.component';
     HeaderComponent,
     SideBarComponent,
     PageNotFoundComponent,
-    BreadcrumsComponent
+    BreadcrumsComponent,
+    LoaderComponent
   ],
   exports:[
     HeaderComponent,
     SideBarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,

@@ -48,7 +48,8 @@ export class UsuariosComponent {
   
         this._Service.PostUsuario(this.Model).subscribe(resp =>{
           if (resp['data']) {
-            Swal.fire('Datos registrados')
+            Swal.fire('Datos registrados');
+            this.form.reset();
           }
         })
       }

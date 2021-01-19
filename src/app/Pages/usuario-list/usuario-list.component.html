@@ -13,15 +13,22 @@
                                 <th>Last Name</th>
                                 <th>Username</th>
                                 <th>Role</th>
+                                <th>Tools</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of ModelList">
+                            <tr *ngFor="let item of ModelList; let i = index">
                                 <td>{{item.nombre}}</td>
                                 <td>{{item.apellidos}}</td>
                                 <td>{{item.correo}}</td>
                                 <td *ngIf="item.idRol == 1">Admin</td>
                                 <td *ngIf="item.idRol == 2">User</td>
+                                <th>
+                                    <p *ngIf="item.id == IdUser">Current User</p>
+                                    <button *ngIf="item.id != IdUser" (click)="Delete(item.id, i )" class="btn btn-success">
+                                        Delete User
+                                    </button>
+                                </th>
                             </tr>
                         </tbody>
                     </table>
