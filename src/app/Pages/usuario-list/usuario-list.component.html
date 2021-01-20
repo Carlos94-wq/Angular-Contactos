@@ -1,12 +1,65 @@
 <div class="container-fluid animate__animated animate__fadeIn">
     <!-- row -->
-    <div class="row">
+    <div class="row">     
         <div class="col-sm-12">
+            <form [formGroup]="form" (ngSubmit)="Buscar()" class="form-horizontal form-material">
+                <div class="form-search">
+                    <div class="form-group">
+                        <label class="col-md-12">Nombre</label>
+                        <div class="col-md-12">
+                            <input 
+                                type="text" 
+                                class="form-control form-control-line"
+                                formControlName="Nombre"
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Apelldios</label>
+                        <div class="col-md-12">
+                            <input 
+                                type="text" 
+                                class="form-control form-control-line"
+                                formControlName="Apellidos"
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Correo</label>
+                        <div class="col-md-12">
+                            <input 
+                                type="text" 
+                                class="form-control form-control-line"
+                                formControlName="Correo"
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Correo</label>
+                        <div class="col-md-12">
+                          <select  formControlName="Rol" class="form-control form-control-line">
+                              <option value="0">Select an option</option>
+                              <option value="1">Admin</option>
+                              <option value="2">User</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input 
+                            type="submit" 
+                            value="Buscar"
+                            class="btn btn-success"
+                        >
+                    </div>
+                </div>
+            </form>
             <div class="white-box">
                 <h3>Basic Table</h3>
                 <p class="text-muted">Add class <code>.table</code></p>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table animate__animated animate__fadeIn">
                         <thead>
                             <tr>
                                 <th>First Name</th>

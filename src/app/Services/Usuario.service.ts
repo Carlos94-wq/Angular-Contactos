@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import * as jwt_decode from 'jwt-decode';
 import { UsuarioDto } from '../Models/UsuarioDto';
+import { UsuarioQueryFilters } from '../Models/UserQueryFilters';
 
 @Injectable()
 export class UsuarioService {
@@ -52,6 +53,13 @@ export class UsuarioService {
     public DeleteUsuario(id: number){
         return this._http.delete(this.BaseUrl + 'Usuario/' + id, {
              headers: this.headers.set('Authorization', 'Bearer ' + this.Token) 
+        })
+    }
+
+    public BuscarUsuarios(model: UsuarioQueryFilters){
+        return this._http.get(`${this.BaseUrl}Usuario?Nombre=${model.Nombre}&Apellidos=${model.Apellidos}&Correo=${model.Correo}&Estatus=1&Rol=${model.Rol}`, 
+        {
+            headers: this.headers.set('Authorization', 'Bearer ' + this.Token)
         })
     }
 }
